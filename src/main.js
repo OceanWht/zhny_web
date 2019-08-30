@@ -5,11 +5,18 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import VueCookie from 'vue-cookies'
+import VueCookies from 'vue-cookies'
+import 'babel-polyfill'
+import Axios from 'axios'
+import Header from '@/components/pageheader/pageheader'
+
+/*将头部那个组件封装然后注册到Vue实例中*/
+Vue.component('my-header',Header)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-Vue.use(VueCookie)
+Vue.use(VueCookies)
+Vue.prototype.$ajax = Axios
 
 /* eslint-disable no-new */
 new Vue({
