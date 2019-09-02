@@ -14,7 +14,7 @@
         <el-form-item prop="loginPass">
           <el-input placeholder="请输入密码" v-model="form.loginPass"
                     @keyup.enter.native="login('form')"
-                    clearable show-password style="width: 300px;height: 40px" maxlength="15"></el-input>
+                     show-password style="width: 300px;height: 40px" maxlength="15"></el-input>
         </el-form-item>
         <el-form-item>
           <el-checkbox v-model="form.rememberPass" style="margin-top: 1%"><span style="color: white">记住密码</span>
