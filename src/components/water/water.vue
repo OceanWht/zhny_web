@@ -1,11 +1,11 @@
 <template>
-  <el-row style="background-color: white;" gutter="20">
+  <el-row style="background-color: white;">
     <el-col :span="3" class="water-index">
       <el-row type="flex">
         <el-col :span="1">
           <img src="./static/imgs/water-05.png" class="img-water">
         </el-col>
-        <el-col :span="16" style="margin-left: 20%">
+        <el-col :span="16" style="margin-left: 65px">
           <el-row>
             <el-col><h3>当月用气量（m³）</h3></el-col>
           </el-row>
@@ -14,7 +14,7 @@
           </el-row>
           <el-row>
             <el-col>
-              <hr width="170px">
+              <hr>
               <h4>上月用气量：
                 <label>123</label></h4>
             </el-col>
@@ -28,7 +28,7 @@
     <el-col :span="1" style="margin-left: 1%;">
       <el-row style="margin-top: 100%;">
         <el-col>
-          <img src="./static/imgs/water-02.png">
+          <img src="./static/imgs/water-02.png" class="img_second">
         </el-col>
       </el-row>
       <el-row>
@@ -49,7 +49,7 @@
       </el-row>
       <el-row>
         <el-col :span="6"  class="krq-10">
-          <img src="./static/imgs/water-04.png">
+          <img src="./static/imgs/water-04.png" class="img_third">
         </el-col>
         <el-col :span="10" class="gas_num">
           <span class="content_gas">123</span>
@@ -63,7 +63,7 @@
       </el-row>
       <el-row>
         <el-col :span="6"   class="krq-10">
-          <img src="./static/imgs/water-04.png">
+          <img src="./static/imgs/water-04.png" class="img_third">
         </el-col>
         <el-col :span="10" class="gas_num">
           <span  class="content_gas">123</span>
@@ -74,20 +74,25 @@
 </template>
 
 <script>
+  import {EleResize} from "../../assets/js/esresize.js";
+
   let echarts = require('echarts');
   export default {
     name: "water",
+    data(){
+      return {
+      }
+    },
     mounted() {
       this.initChart();//要在mounted函数里初始化，如果需要得话，因为要保证dom元素已经挂载到页面中
     },
     methods: {
+
       initChart: function () {
-        let mychart = echarts.init(document.getElementById('waterchart'));
+        let mychart  = echarts.init(document.getElementById('waterchart'));
+        let resizeDiv = document.getElementById('waterchart');
         // 绘制图表
         mychart.setOption({
-          /*title: {
-            text: 'ECharts 入门示例'
-          },*/
           color: ['#008000'],
           tooltip: {},
           xAxis: {
@@ -100,7 +105,12 @@
             data: [5, 20, 36, 10, 10, 20]
           }]
         });
-        mychart.resize();
+        let linstener = function () {
+          console.log('resize');
+          mychart.resize();
+        };
+
+        EleResize.on(resizeDiv,linstener);
       }
     }
   }
@@ -118,10 +128,19 @@
   .img-water {
     margin-top: 65px;
     margin-left: -30px;
+    width: 95px;
+    height: 96px;
   }
 
   .dian_bj {
     margin: 60px 0px 0px -300px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .img_third{
+    width: 32px;
+    height: 32px;
   }
 
   p {
@@ -143,12 +162,21 @@
     text-align: left;
   }
 
+  hr {
+    width: 170px;
+  }
+
+
   h4 {
     color: white;
     margin-top: 15%;
     text-align: left;
   }
 
+  .img_second{
+    width: 45px;
+    height: 45px;
+  }
   .content_gas{
     font-size: 18px;color: #008000
   }
@@ -158,7 +186,7 @@
   }
 
   .krq-10{
-    margin-left: 12%;margin-top: 5%
+    margin-left: 12%;margin-top: 5%;
   }
 
   .krq-10-size{
@@ -166,11 +194,11 @@
   }
 
   .gas_num{
-    margin-top: 10%;margin-left: -10%
+    margin-top: 13px;
   }
 
   .gaschart{
-    width: 50%;height: 100%;
+    min-width: 100%;min-height: 233px;
   }
 
   .gas_title{

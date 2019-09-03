@@ -22,6 +22,25 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  //vue-cli2脚手架在这里配置 px2rem-loader，同时将这个参数添加到下面得loaders里。如果是
+  //vue-cli3脚手架，找到文件 node_modules/@vue/cli-service/lib/config/css.js，添加规则：
+ /* config.module
+    .rule('css')
+    .test(/\.css$/)
+    .oneOf('vue')
+    .resourceQuery(/\?vue/)
+    .use('px2rem')
+    .loader('px2rem-loader')
+    .options({
+      remUnit: 75
+    })*/
+  const px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      remUnit: 192
+    }
+  }
+
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
@@ -30,8 +49,8 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+  function generateLoaders(loader, loaderOptions) {
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader,px2remLoader] : [cssLoader,px2remLoader]
 
     if (loader) {
       loaders.push({
@@ -59,7 +78,7 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
+    sass: generateLoaders('sass', {indentedSyntax: true}),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')

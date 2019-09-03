@@ -13,6 +13,7 @@ import water from '@/components/water/water'
 import gas from '@/components/gas/gas'
 import air from '@/components/air/air'
 import elec from '@/components/elec/elec'
+import 'lib-flexible'   /*将阿里自适应插件全局注册得到Vue*/
 
 /*将头部那个组件封装然后注册到Vue实例中*/
 Vue.component('my-header',Header)

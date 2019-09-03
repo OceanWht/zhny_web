@@ -5,15 +5,16 @@
         <label style="color: #ffffff;">{{ClientName}}</label> <label style="color: #ffffff">·综合能源管理系统</label>
       </el-col>
       <el-col :span="1" :offset="9" style="margin-top: 0.8%;">
-        <span style="font-size: 14px;font-weight: 200;color: #ffffff">欢迎登录</span>
+        <span class="welcome">欢迎登录</span>
       </el-col>
       <el-col :span="1" style="margin-top: 0.8%;width: 45px">
-        <el-avatar :size="30" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-                   style="margin-left: 5%"></el-avatar>
+        <!--<el-avatar :size="30" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+                    class="login_avatar"></el-avatar>-->
+        <img src="./static/imgs/touxiang-13.png" class="login_avatar">
       </el-col>
       <el-col :span="1" style="margin-top: 0.8%;">
         <el-dropdown @command="loginOut">
-          <span style="font-size: 14px;font-weight: 200;color: #ffffff">{{loginName}}</span>
+          <span class="loginName">{{loginName}}</span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="1">安全退出</el-dropdown-item>
           </el-dropdown-menu>
@@ -55,5 +56,19 @@
     background-image: url('./static/imgs/top-bj-12.png');
     font-size: 26px;
     text-align: left;
+  }
+
+  .welcome{
+    font-size: 14px;font-weight: 200;color: #ffffff
+  }
+
+  .loginName{
+    font-size: 14px;font-weight: 200;color: #ffffff
+  }
+
+  .login_avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
   }
 </style>
