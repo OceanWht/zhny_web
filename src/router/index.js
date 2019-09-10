@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Login from '@/components/login/login'
 import Index from '@/components/index/index'
 import WaterDetail from '@/components/water/water_detail/water_detail'
+import WaterIndex from '@/components/water/water_index/water_index'
+import WaterRealtime from '@/components/water/water_realtime/water_realtime'
 
 
 Vue.use(Router)
@@ -21,9 +23,21 @@ export default new Router({
       component:Index
     },
     {
-      path:'/water',
-      name:'WaterDetail',
-      component:WaterDetail
+      path:'/water/index',
+      name:'WaterIndex',
+      component:WaterIndex,
+      children:[
+        {
+          path:'detail',
+          name:'WaterDetail',
+          component:WaterDetail
+        },
+        {
+          path:'realtime',
+          name:'WaterRealtime',
+          component:WaterRealtime
+        }
+      ]
     }
   ]
 })

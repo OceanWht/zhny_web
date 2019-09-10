@@ -91,7 +91,7 @@
     methods: {
       toWater: function () {
           this.$router.push({
-            name:'WaterDetail'
+            name:'WaterDetail' //这里使用detail不适用waterindex，是因为menu里默认需要展示deatil组件，:default-active="$route.path"对应这里
           });
       },
       initChart: function () {

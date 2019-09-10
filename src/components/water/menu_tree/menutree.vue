@@ -1,8 +1,8 @@
 <template>
   <el-aside style="margin: -5px 0 0 -25px;width: 200px;height: 650px;overflow-x: hidden">
     <el-scrollbar style="height: 100%;overflow-x: hidden;">
-      <el-menu text-color="#000000" default-active="1" @select="handleSelect">
-        <el-menu-item index="1" class="el-menu-item1">
+      <el-menu text-color="#000000" :default-active="$route.path" @select="handleSelect" router>
+        <el-menu-item  class="el-menu-item1" index="/water/index/detail">
           <i class="iconfont icon-kanban" style="margin-left: -80px"></i>
           <span slot="title" style="font-size: 14px">用水概览</span>
         </el-menu-item>
@@ -16,7 +16,7 @@
             <i class="iconfont icon-icon-humidity" style="margin-left: -85px"></i>
             <span slot="title" style="font-size: 14px">分路用水</span>
           </template>
-          <el-menu-item index="3-1" class="el-menu-item3">
+          <el-menu-item index="/water/index/realtime" class="el-menu-item3">
             <i class="el-icon-tickets"></i>
             <span slot="title" style="font-size: 14px">实时用水数据</span>
           </el-menu-item>

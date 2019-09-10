@@ -1,334 +1,325 @@
 <template>
-  <el-container style="width: 100%;height: 100%">
-    <my-header></my-header>
-    <el-main style="background-color: white">
-      <el-container>
-        <waterMenuTree/>
-        <el-main class="elmain">
-          <el-row class="elrow1">
-            <el-col :span="24">
-              <h3 class="neirongguanli">
-                <i class="iconfont icon-neirongguanli"></i>&nbsp;总体用水
-              </h3>
-              <hr class="hr1">
-            </el-col>
-          </el-row>
-          <el-row type="flex">
-            <el-col style="margin-left: -10px" :span="6">
-              <el-row style="background-color: #2f8ba2;height: 40px">
-                <el-col :span="24">
-                  <p class="jichukaikuang">
-                    基础概况
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #359cb5;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    总表数量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123个
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #359cb5;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    标煤折算
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123吨
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #359cb5;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    水表路数
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123路
-                  </p>
-                </el-col>
-              </el-row>
-            </el-col>
-            <el-col style="margin-left: 13px" :span="6">
-              <el-row style="background-color: #c64334;height: 40px">
-                <el-col>
-                  <p class="jichukaikuang">
-                    用水概况
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #dd4a39;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    本月累计用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #dd4a39;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    上月总用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #dd4a39;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    上上月总用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-            </el-col>
-            <el-col style="margin-left: 13px;" :span="6">
-              <el-row style="background-color: #da8b13;height: 40px">
-                <el-col>
-                  <p class="jichukaikuang">
-                    用量统计
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #f39c12;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    本月最大用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #f39c12;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    上月最大用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #f39c12;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    上上月最大用水量
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123m³
-                  </p>
-                </el-col>
-              </el-row>
-            </el-col>
-            <el-col :span="6" style="margin-left: 13px">
-              <el-row style="background-color: #039452;height: 40px">
-                <el-col>
-                  <p class="jichukaikuang">
-                    异常用水
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #01a65a;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    本年异常用水
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123天
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color: #01a65a;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    昨日异常用水
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123条
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row style="background-color:#01a65a;height: 40px">
-                <el-col :span="16">
-                  <p class="zongbiaoshuliang">
-                    累计未读告警
-                  </p>
-                </el-col>
-                <el-col :span="8">
-                  <p class="zongbiaoNum">
-                    123条
-                  </p>
-                </el-col>
-              </el-row>
-            </el-col>
-          </el-row>
-          <el-row class="elrow2">
-            <el-col :span="18">
-              <el-row>
-                <el-col :span="24">
-                  <h3 class="riyongshuiliang">
-                    <p>
-                      <i class="iconfont icon-fenxi"></i>&nbsp;日用水量对比图
-                    </p>
-                  </h3>
-                  <hr class="hr2">
-                </el-col>
-              </el-row>
-              <el-row>
-                <el-col :span="22">
-                  <div id="riyongshuichart" class="riyongshuiChart"></div>
-                </el-col>
-                <el-col :span="2">
+  <el-main class="elmain">
+    <el-row class="elrow1">
+      <el-col :span="24">
+        <h3 class="neirongguanli">
+          <i class="iconfont icon-neirongguanli"></i>&nbsp;总体用水
+        </h3>
+        <hr class="hr1">
+      </el-col>
+    </el-row>
+    <el-row type="flex">
+      <el-col style="margin-left: -10px" :span="6">
+        <el-row style="background-color: #2f8ba2;height: 40px">
+          <el-col :span="24">
+            <p class="jichukaikuang">
+              基础概况
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #359cb5;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              总表数量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123个
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #359cb5;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              标煤折算
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123吨
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #359cb5;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              水表路数
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123路
+            </p>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col style="margin-left: 13px" :span="6">
+        <el-row style="background-color: #c64334;height: 40px">
+          <el-col>
+            <p class="jichukaikuang">
+              用水概况
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #dd4a39;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              本月累计用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #dd4a39;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              上月总用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #dd4a39;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              上上月总用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col style="margin-left: 13px;" :span="6">
+        <el-row style="background-color: #da8b13;height: 40px">
+          <el-col>
+            <p class="jichukaikuang">
+              用量统计
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #f39c12;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              本月最大用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #f39c12;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              上月最大用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #f39c12;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              上上月最大用水量
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123m³
+            </p>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="6" style="margin-left: 13px">
+        <el-row style="background-color: #039452;height: 40px">
+          <el-col>
+            <p class="jichukaikuang">
+              异常用水
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #01a65a;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              本年异常用水
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123天
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color: #01a65a;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              昨日异常用水
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123条
+            </p>
+          </el-col>
+        </el-row>
+        <el-row style="background-color:#01a65a;height: 40px">
+          <el-col :span="16">
+            <p class="zongbiaoshuliang">
+              累计未读告警
+            </p>
+          </el-col>
+          <el-col :span="8">
+            <p class="zongbiaoNum">
+              123条
+            </p>
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-row>
+    <el-row class="elrow2">
+      <el-col :span="18">
+        <el-row>
+          <el-col :span="24">
+            <h3 class="riyongshuiliang">
+              <p>
+                <i class="iconfont icon-fenxi"></i>&nbsp;日用水量对比图
+              </p>
+            </h3>
+            <hr class="hr2">
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="22">
+            <div id="riyongshuichart" class="riyongshuiChart"></div>
+          </el-col>
+          <el-col :span="2">
+            <el-row>
+              <el-col>
+                <p class="benyueyongshui">
+                  本月用水量
+                </p>
+                <p class="benyueyongshuiNum">
                   <el-row>
-                    <el-col>
-                      <p class="benyueyongshui">
-                        本月用水量
-                      </p>
-                      <p class="benyueyongshuiNum">
-                        <el-row>
-                          <el-col :span="4">
-                            <img src="../static/imgs/water-04.png" class="img_third">
-                          </el-col>
-                          <el-col :span="2" class="elcol-benyueNum">
-                            <span class="benyueyongshuiNum_Num">9999.99m³</span>
-                          </el-col>
-                        </el-row>
-                      </p>
-                      <hr class="hr3">
+                    <el-col :span="4">
+                      <img src="../static/imgs/water-04.png" class="img_third">
+                    </el-col>
+                    <el-col :span="2" class="elcol-benyueNum">
+                      <span class="benyueyongshuiNum_Num">9999.99m³</span>
                     </el-col>
                   </el-row>
+                </p>
+                <hr class="hr3">
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col>
+                <p class="benyueyongshui">
+                  上月用水量
+                </p>
+                <p class="benyueyongshuiNum">
                   <el-row>
-                    <el-col>
-                      <p class="benyueyongshui">
-                        上月用水量
-                      </p>
-                      <p class="benyueyongshuiNum">
-                        <el-row>
-                          <el-col :span="4">
-                            <img src="../static/imgs/water-04.png" class="img_third">
-                          </el-col>
-                          <el-col :span="2" class="elcol-benyueNum">
-                            <span class="benyueyongshuiNum_Num">9999.99m³</span>
-                          </el-col>
-                        </el-row>
-                      </p>
+                    <el-col :span="4">
+                      <img src="../static/imgs/water-04.png" class="img_third">
+                    </el-col>
+                    <el-col :span="2" class="elcol-benyueNum">
+                      <span class="benyueyongshuiNum_Num">9999.99m³</span>
                     </el-col>
                   </el-row>
-                </el-col>
-              </el-row>
-              <br/>
-              <br/>
-              <el-row>
-                <el-col :span="24">
-                  <h3 class="riyongshuiliang">
-                    <p>
-                      <i class="iconfont icon-fenxi"></i>&nbsp;月用水量对比图
-                    </p>
-                  </h3>
-                  <hr class="hr2">
-                </el-col>
-              </el-row>
-              <el-row>
-                <el-col :span="22">
-                  <div id="riyongshuichart2" class="riyongshuiChart"></div>
-                </el-col>
-                <el-col :span="2">
+                </p>
+              </el-col>
+            </el-row>
+          </el-col>
+        </el-row>
+        <br/>
+        <br/>
+        <el-row>
+          <el-col :span="24">
+            <h3 class="riyongshuiliang">
+              <p>
+                <i class="iconfont icon-fenxi"></i>&nbsp;月用水量对比图
+              </p>
+            </h3>
+            <hr class="hr2">
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="22">
+            <div id="riyongshuichart2" class="riyongshuiChart"></div>
+          </el-col>
+          <el-col :span="2">
+            <el-row>
+              <el-col>
+                <p class="benyueyongshui">
+                  今年用水量
+                </p>
+                <p class="benyueyongshuiNum">
                   <el-row>
-                    <el-col>
-                      <p class="benyueyongshui">
-                        今年用水量
-                      </p>
-                      <p class="benyueyongshuiNum">
-                        <el-row>
-                          <el-col :span="4">
-                            <img src="../static/imgs/water-04.png" class="img_third">
-                          </el-col>
-                          <el-col :span="2" class="elcol-benyueNum">
-                            <span class="benyueyongshuiNum_Num">9999.99m³</span>
-                          </el-col>
-                        </el-row>
-                      </p>
-                      <hr class="hr3">
+                    <el-col :span="4">
+                      <img src="../static/imgs/water-04.png" class="img_third">
+                    </el-col>
+                    <el-col :span="2" class="elcol-benyueNum">
+                      <span class="benyueyongshuiNum_Num">9999.99m³</span>
                     </el-col>
                   </el-row>
+                </p>
+                <hr class="hr3">
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col>
+                <p class="benyueyongshui">
+                  去年用水量
+                </p>
+                <p class="benyueyongshuiNum">
                   <el-row>
-                    <el-col>
-                      <p class="benyueyongshui">
-                        去年用水量
-                      </p>
-                      <p class="benyueyongshuiNum">
-                        <el-row>
-                          <el-col :span="4">
-                            <img src="../static/imgs/water-04.png" class="img_third">
-                          </el-col>
-                          <el-col :span="2" class="elcol-benyueNum">
-                            <span class="benyueyongshuiNum_Num">9999.99m³</span>
-                          </el-col>
-                        </el-row>
-                      </p>
+                    <el-col :span="4">
+                      <img src="../static/imgs/water-04.png" class="img_third">
+                    </el-col>
+                    <el-col :span="2" class="elcol-benyueNum">
+                      <span class="benyueyongshuiNum_Num">9999.99m³</span>
                     </el-col>
                   </el-row>
-                </el-col>
-              </el-row>
-            </el-col>
-            <el-col :span="6">
-              <el-row class="tijian_row">
-                <el-col>
-                  <p style="" class="tijian">
-                    <i class="iconfont icon-fenxi2"></i>用水体检
-                  </p>
-                </el-col>
-              </el-row>
-              <el-row>
-                <el-col>
-                  <div id="liquidfill-chart" class="tijianchart"></div>
-                </el-col>
-              </el-row>
-              <el-row>
-                <el-col>
-                  <el-button round class="tijianbutton">立即体检</el-button>
-                </el-col>
-              </el-row>
-            </el-col>
-          </el-row>
-        </el-main>
-      </el-container>
-    </el-main>
-    <el-footer style="height: 0px"></el-footer>
-  </el-container>
+                </p>
+              </el-col>
+            </el-row>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="6">
+        <el-row class="tijian_row">
+          <el-col>
+            <p style="" class="tijian">
+              <i class="iconfont icon-fenxi2"></i>用水体检
+            </p>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col>
+            <div id="liquidfill-chart" class="tijianchart"></div>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col>
+            <el-button round class="tijianbutton">立即体检</el-button>
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-row>
+  </el-main>
 </template>
 
 <script>
