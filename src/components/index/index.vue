@@ -2,7 +2,7 @@
   <el-container style="width: 100%;height: 100%">
     <my-header></my-header>
     <el-main>
-      <el-row>
+      <el-row :gutter="20">
         <el-col :span="20">
           <elec/>
           <br>
@@ -12,6 +12,15 @@
           <br>
           <air/>
         </el-col>
+        <el-col :span="4">
+          <biaomei/>
+          <br>
+          <biaomei-table/>
+          <br>
+          <indexFee/>
+          <br>
+          <indexChartPie/>
+        </el-col>
       </el-row>
     </el-main>
     <el-footer height="0px">
@@ -20,15 +29,12 @@
 </template>
 
 <script>
-
   export default {
     name: "index",
     data() {
-        return {
-        }
+        return {}
     },
     methods:{
-
     },
     mounted() {
 
@@ -37,5 +43,6 @@
 </script>
 
 <style scoped>
+
 
 </style>

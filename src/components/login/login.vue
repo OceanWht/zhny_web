@@ -115,8 +115,8 @@
 
                   //页面跳转
                   let path = this.$router.currentRoute.fullPath;
-                  this.$router.replace({
-                    name: 'Index'
+                  this.$router.push({
+                    name: 'Index',
                   })
 
                 }.bind(this)).catch(function (ret) {

@@ -1,18 +1,18 @@
 <template>
   <el-header class="layui-logo">
     <el-row>
-      <el-col :span="12" style="margin-top: 0.5%">
+      <el-col :span="12" class="clientname">
         <label style="color: #ffffff;">{{ClientName}}</label> <label style="color: #ffffff">·综合能源管理系统</label>
       </el-col>
-      <el-col :span="1" :offset="9" style="margin-top: 0.8%;">
+      <el-col :span="1" :offset="9" class="welcome1">
         <span class="welcome">欢迎登录</span>
       </el-col>
-      <el-col :span="1" style="margin-top: 0.8%;width: 45px">
+      <el-col :span="1" class="loginimg">
         <!--<el-avatar :size="30" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
                     class="login_avatar"></el-avatar>-->
         <img src="./static/imgs/touxiang-13.png" class="login_avatar">
       </el-col>
-      <el-col :span="1" style="margin-top: 0.8%;">
+      <el-col :span="1" class="loginName1">
         <el-dropdown @command="loginOut">
           <span class="loginName">{{loginName}}</span>
           <el-dropdown-menu slot="dropdown">
@@ -36,7 +36,7 @@
     methods: {
       loginOut: function (command) {
         this.$router.replace({
-          name:'Login'
+          name: 'Login'
         });
       }
     }
@@ -47,28 +47,48 @@
   .layui-logo {
     position: relative;
     z-index: 1002;
-    left: -8px;
+
     width: 100%;
-    height: 100%;
     overflow: auto;
     font-weight: 500;
-    background-repeat: no-repeat;
-    background-image: url('./static/imgs/top-bj-12.png');
+    background: url('./static/imgs/top-bj-12.png') no-repeat;
+    background-size: 100% 100%;
     font-size: 26px;
     text-align: left;
   }
 
-  .welcome{
-    font-size: 14px;font-weight: 200;color: #ffffff
+  .welcome {
+    font-size: 14px;
+    font-weight: 200;
+    color: #ffffff
   }
 
-  .loginName{
-    font-size: 14px;font-weight: 200;color: #ffffff
+  .loginName {
+    font-size: 14px;
+    font-weight: 200;
+    color: #ffffff
   }
 
-  .login_avatar{
+  .login_avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+  }
+
+  .welcome1 {
+    margin-top: 18px;
+  }
+
+  .loginName1 {
+    margin-top: 15px;
+  }
+
+  .loginimg {
+    margin-top: 18px;
+    width: 45px
+  }
+
+  .clientname {
+    margin-top: 13px
   }
 </style>
