@@ -114,7 +114,8 @@
     name: "menutree",
     methods: {
       handleSelect: function (key, keyPath) {
-        console.log(key, keyPath);
+        console.log(key, 'key');
+        console.log(keyPath,'keyPath');
       },
     }
   }
