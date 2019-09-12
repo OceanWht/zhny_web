@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import {EleResize} from "../../assets/js/esresize";
+  import {EleResize} from "../../../assets/js/esresize";
 
   let echarts = require('echarts');
   export default {
